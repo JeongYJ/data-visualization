@@ -1,0 +1,140 @@
+<html>
+ <meta charset="utf-8">
+  <head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>청소년 범죄 유형</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aliya Y. Robinson">
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="fonts.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+
+  <style type="text/css" >
+#body{ text-align:center; }
+#wrapper {
+    width:600px;
+    margin : 0 auto ;
+    text-align:left;
+}
+</style>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+
+      google.charts.setOnLoadCallback(drawChart);
+
+      function draw(i)
+      {
+        if(i==2008)
+           google.charts.setOnLoadCallback(drawChart);
+        else if(i==2009)
+           google.charts.setOnLoadCallback(drawChart2);
+        else if(i==2010)
+           google.charts.setOnLoadCallback(drawChart3);
+      }
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['내용', '비율'],
+            ["이욕",8647],
+            ["사행심",1498],
+            ["보복",388],
+            ["가정불화",879],
+            ["호기심",13839],
+            ["유혹",2681],
+            ["우발적",35869],
+            ["현실불만",937],
+            ["부주의",12447],
+            ["기타",35695],
+            ["미상",22112]
+        ]);
+
+        var options = {
+          title: '2008년 청소년 범죄 유형',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+
+      function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+            ['내용', '비율'],
+            ["이욕",10047],
+            ["사행심",2213],
+            ["보복",59],
+            ["가정불화",38],
+            ["호기심",12793],
+            ["유혹",2761],
+            ["우발적",35016],
+            ["현실불만",952],
+            ["부주의",8066],
+            ["기타",29642],
+            ["미상",11435]
+        ]);
+
+        var options = {
+          title: '2009년 청소년 범죄 유형',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+
+      function drawChart3() {
+        var data = google.visualization.arrayToDataTable([
+            ['내용', '비율'],
+            ["이욕",18084],
+            ["사행심",1083],
+            ["보복",28],
+            ["가정불화",39],
+            ["호기심",10870],
+            ["유혹",1745],
+            ["우발적",25720],
+            ["현실불만",610],
+            ["부주의",5777],
+            ["기타",17765],
+            ["미상",8055]
+        ]);
+
+        var options = {
+          title: '2010년 청소년 범죄 유형',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+    </script>
+  </head>
+  <body id="body" style= "margin: 100 auto">
+
+ <div class="tab-mod container">
+      <h1>청소년 범죄 유형</h1>
+      <div class="tabs">
+        <ul class="cf">
+          <li><a href="#1" class="tab 1" onclick="draw(2008)">2008년</a></li>
+          <li><a href="#2" class="tab 2" onclick="draw(2009)">2009년</a></li>
+          <li><a href="#3" class="tab 3" onclick="draw(2010)">2010년</a></li>
+          <!---->
+        </ul>
+      </div>
+
+       <div id="wrapper">
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+  </div>
+  <div class="tabs">
+   <ul class="cf">
+          <li><a href="../yj_page1/google-charts-bar-charts.html" class="tab 1">소년 범죄자 범행동기와 부모관계</a></li>
+     </ul>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Google Charts Tutorial</title>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {packages: ['corechart']});     
+   </script>
+</head>
+<body>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+   // Define the chart to be drawn.
+   var data = google.visualization.arrayToDataTable([
+      ['Year', '이욕', '보복', '사행심' , '가정불화', '호기심', '유혹', '우발적', '현실불만','부주의', '기타', '미상'],
+	  ['2008',  8474,  381,  1471,  861 ,13749 ,2634 ,36100, 0 ,11607  ,34226 ,100  ],
+      ['2009',  9807,  57,  2185 ,36  ,12707  ,2736  ,34484  ,918  ,7657  ,28753  ,78 ],
+      ['2010',  17862, 27, 1071 , 37 , 10797 , 1731 , 25427 , 603 , 5556 , 17336 , 55 ]
+      ]);
+
+   var options = {
+      title: '소년 범죄자 범행동기와 부모관계_미혼',
+      isStacked:true	  
+   };  
+
+   // Instantiate and draw the chart.
+   var chart = new google.visualization.BarChart(document.getElementById('container'));
+   chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+</script>
+</body>
+</html>
